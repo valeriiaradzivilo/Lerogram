@@ -56,7 +56,7 @@ def error_message():
 
 def right_answer():
     print("NO ERRORS")
-    text = "YOU WON. Do you want to try again?"
+    text = "YOU WON. Try again?"
     text_col = 'green'
     right_window = ResultWindow(text, text_col)
     right_window.make_the_window()

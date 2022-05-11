@@ -21,25 +21,29 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz):
     # sort an array for easier use
     all_coords.sort()
     print(all_coords)
+    check_if_right = []
+    check_if_false = []
     # check if all boxes are colored
-    check_all_colored(all_coords)
-    check_verticals(all_coords, bl_vert, yel_vert)
-    check_horizontals(all_coords, bl_horiz, yel_horiz)
-    # if  == 0:
-    #     right_answer()
+    check_all_colored(all_coords, check_if_right)
+    check_verticals(all_coords, bl_vert, yel_vert, check_if_right)
+    check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right)
+    if not check_if_right:
+        funcs_interface.right_answer()
+    else:
+        funcs_interface.error_message()
 
 
-def check_all_colored(all_coords):
+def check_all_colored(all_coords, check_if_right):
     user_coord_amount = len(all_coords)
     needed_coord_amount = 15 * 15
     # start all checks
     # if user doesn't fill the field
     if user_coord_amount != needed_coord_amount:
-        funcs_interface.error_message()
         print("in filling the field")
+        check_if_right.append(1)
 
 
-def check_verticals(all_coords, bl_vert, yel_vert):
+def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
     # Black verticals
     for j in range(15):
         list_of_lengths = []
@@ -54,10 +58,10 @@ def check_verticals(all_coords, bl_vert, yel_vert):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if bl_vert[j] not in list_of_lengths and all(x > bl_vert[j] for x in list_of_lengths):
-            funcs_interface.error_message()
             print("in black verticals")
             print(list_of_lengths)
             print("Supposed max: ", bl_vert[j])
+            check_if_right.append(1)
     # Yellow verticals
     for j in range(15):
         list_of_lengths = []
@@ -72,13 +76,13 @@ def check_verticals(all_coords, bl_vert, yel_vert):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if yel_vert[j] not in list_of_lengths and all(x > yel_vert[j] for x in list_of_lengths):
-            funcs_interface.error_message()
             print("in yellow verticals")
             print(list_of_lengths)
             print("Supposed max: ", yel_vert[j])
+            check_if_right.append(1)
 
 
-def check_horizontals(all_coords, bl_horiz, yel_horiz):
+def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
     # Blacks horizontals
     for j in range(15):
         list_of_lengths = []
@@ -93,10 +97,10 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if bl_horiz[j] not in list_of_lengths and all(x > bl_horiz[j] for x in list_of_lengths):
-            funcs_interface.error_message()
             print("in black horizontals")
             print(list_of_lengths)
             print("Supposed max: ", bl_horiz[j])
+            check_if_right.append(1)
 
     # Yellow horizontals
     for j in range(15):
@@ -112,7 +116,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if yel_horiz[j] not in list_of_lengths and all(x > yel_horiz[j] for x in list_of_lengths):
-            funcs_interface.error_message()
             print("in yellow horizontals")
             print(list_of_lengths)
             print("Supposed max: ", yel_horiz[j])
+            check_if_right.append(1)

@@ -16,7 +16,7 @@ def generate_yel_dots(amount):
     return yel_dots
 
 
-def find_max_vert(yel_dots):
+def find_max_hor(yel_dots):
     # Black verticals
     amounts_bl_vert = []
     for i in range(15):
@@ -49,7 +49,7 @@ def find_max_vert(yel_dots):
     return amounts_bl_vert, amounts_yel_ver
 
 
-def find_max_horiz(yel_dots):
+def find_max_vert(yel_dots):
     # Black horizontals
     amounts_bl_horiz = []
     for j in range(15):

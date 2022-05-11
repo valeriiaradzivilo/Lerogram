@@ -18,8 +18,8 @@ funcs_interface.make_two_color_boxes()
 all_coords = []
 yel_dots = funcs_logic.generate_yel_dots(100)
 print(yel_dots)
+bl_horiz, yel_horiz = funcs_logic.find_max_hor(yel_dots)
 bl_vert, yel_vert = funcs_logic.find_max_vert(yel_dots)
-bl_horiz, yel_horiz = funcs_logic.find_max_horiz(yel_dots)
 
 funcs_interface.make_num_horiz_board(bl_horiz, yel_horiz)
 funcs_interface.make_num_vert_board(bl_vert, yel_vert)
@@ -27,6 +27,6 @@ funcs_interface.make_num_vert_board(bl_vert, yel_vert)
 funcs_interface.create_button_field(all_coords)
 
 # work with an array all_coords
-CheckButton(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz)
+CheckButton(all_coords, bl_horiz, yel_horiz, bl_vert, yel_vert)
 
 main_window.mainloop()
