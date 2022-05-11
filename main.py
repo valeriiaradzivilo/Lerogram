@@ -17,7 +17,7 @@ funcs_interface.make_two_color_boxes()
 # create an array for all pressed buttons and their color
 all_coords = []
 yel_dots = funcs_logic.generate_yel_dots(100)
-print(yel_dots)
+print("Answer:", yel_dots)
 bl_horiz, yel_horiz = funcs_logic.find_max_hor(yel_dots)
 bl_vert, yel_vert = funcs_logic.find_max_vert(yel_dots)
 

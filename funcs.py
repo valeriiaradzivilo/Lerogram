@@ -20,7 +20,7 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz):
     all_coords = list(set(all_coords))
     # sort an array for easier use
     all_coords.sort()
-    print(all_coords)
+    print("User input:", all_coords)
     check_if_right = []
     check_if_false = []
     # check if all boxes are colored
