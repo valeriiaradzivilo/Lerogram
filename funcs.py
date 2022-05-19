@@ -15,7 +15,7 @@ def pressed_twice(event, but, i, j, all_coords):
         all_coords.remove((i, j, "b"))
 
 
-def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz):
+def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
     # delete duplicates
     all_coords = list(set(all_coords))
     # sort an array for easier use
@@ -28,9 +28,9 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz):
     check_verticals(all_coords, bl_vert, yel_vert, check_if_right)
     check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right)
     if not check_if_right:
-        funcs_interface.right_answer()
+        funcs_interface.result_message("You Won!", window)
     else:
-        funcs_interface.error_message()
+        funcs_interface.result_message("You Lost!",window)
 
 
 def check_all_colored(all_coords, check_if_right):

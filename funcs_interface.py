@@ -1,6 +1,6 @@
-from tkinter import Label
+from tkinter import Label, messagebox
 
-from classes import ColorAmounts, ButtonToPlay, ResultWindow
+from classes import ColorAmounts, ButtonToPlay
 
 
 def make_window_label_board(main_window):
@@ -45,19 +45,13 @@ def create_button_field(all_coords):
             ButtonToPlay(i, j, all_coords).place(x=165 + i * 24, y=115 + j * 25)
 
 
-def error_message():
-    print("error")
-    text = "You failed. Try again."
-    text_col = 'red'
-    fail_window = ResultWindow(text, text_col)
-    fail_window.make_the_window()
-    fail_window.mainloop()
+def result_message(mess, window):
+    msgBox = messagebox.askquestion(mess, "Try again?")
+    if msgBox == 'yes':
+        print("Replaying the game")
+        window.destroy()
 
-
-def right_answer():
-    print("NO ERRORS")
-    text = "YOU WON. Try again?"
-    text_col = 'green'
-    right_window = ResultWindow(text, text_col)
-    right_window.make_the_window()
-    right_window.mainloop()
+    else:
+        print("No replay")
+        window.replay.append('n')
+        window.destroy()
