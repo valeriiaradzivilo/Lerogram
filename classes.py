@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter as tk
-import funcs
+import funcs_buttons
 
 
 class WindowMaker(Tk):
@@ -14,7 +14,7 @@ class WindowMaker(Tk):
     def make_the_window(self):
         # configure the root window
         self.title(self.game_title)
-        self.geometry('700x750')
+        self.geometry('700x800')
         # forbid to change window size
         self.resizable(0, 0)
         self.config(bg=self.bg_color)
@@ -37,7 +37,7 @@ class WindowMaker(Tk):
         rules.insert(INSERT, self.game_rules)
         rules.place(
             relx=0.01,
-            rely=0.77
+            rely=0.72
         )
 
 
@@ -56,8 +56,8 @@ class ButtonToPlay(Button):
         self['text'] = " "
         self['width'] = 2
         self['height'] = 1
-        self.bind('<Button-1>', lambda event, but=self, i=i, j=j: funcs.pressed_once(event, but, i, j, all_coords))
-        self.bind('<Double-1>', lambda event, but=self, i=i, j=j: funcs.pressed_twice(event, but, i, j, all_coords))
+        self.bind('<Button-1>', lambda event, but=self, i=i, j=j: funcs_buttons.pressed_once(event, but, i, j, all_coords))
+        self.bind('<Double-1>', lambda event, but=self, i=i, j=j: funcs_buttons.pressed_twice(event, but, i, j, all_coords))
 
 
 class CheckButton(Button):
@@ -67,6 +67,6 @@ class CheckButton(Button):
         self['text'] = "Check!"
         self['width'] = 10
         self['height'] = 2
-        self['command'] = lambda: funcs.check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window)
+        self['command'] = lambda: funcs_buttons.check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window)
         self.place(x=310, y=530)
 

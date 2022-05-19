@@ -1,16 +1,16 @@
 from random import randint
-
 import funcs_logic
 import funcs_interface
 from classes import WindowMaker, CheckButton
 
 replay = []
 while not replay:
-    game_rules = "The rules:\nThere is a field with numbers on the left, right, top and bottom.\nYour task is to color "\
+    game_rules = "Rules:\nThere is a field with numbers on the left, right, top and bottom.\nYour task is to color " \
                  "all boxes using 2 colors: black and yellow.\nNumbers on the left and top show the maximum amount of " \
-                 "black boxes in a row\nor column. Numbers on the right and bottom are maximum for yellow boxes.\nTo " \
-                 "color box black tap on the box once, to color yellow - twice.\nPress the button 'Check' after you " \
-                 "finish. "
+                 "black boxes that\nshould be present in a row or column. Yellow boxes - numbers on the right " \
+                 "and\nbottom.To color box black tap on the box once, to color yellow - twice. Fill all\nboxes. Press " \
+                 "the 'Check' button after you finish.\nThe game can be only closed in messagebox that appears after " \
+                 "you press 'Check'.\nGood luck ) "
     game_name = "Lerogram"
     bg_color = '#4C00C9'
     main_window = WindowMaker(game_name, game_rules, bg_color, replay)

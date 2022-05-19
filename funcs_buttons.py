@@ -2,7 +2,7 @@ import funcs_interface
 
 
 def pressed_once(event, but, i, j, all_coords):
-    but["bg"] = "grey"
+    but["bg"] = "black"
     all_coords.append((i, j, "b"))
     while (i, j, "y") in all_coords:
         all_coords.remove((i, j, "y"))
@@ -39,6 +39,7 @@ def check_all_colored(all_coords, check_if_right):
     # start all checks
     # if user doesn't fill the field
     if user_coord_amount != needed_coord_amount:
+        print("error")
         print("in filling the field")
         check_if_right.append(1)
 
@@ -58,6 +59,7 @@ def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if bl_vert[j] not in list_of_lengths and all(x > bl_vert[j] for x in list_of_lengths):
+            print("error")
             print("in black verticals")
             print(list_of_lengths)
             print("Supposed max: ", bl_vert[j])
@@ -76,6 +78,7 @@ def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if yel_vert[j] not in list_of_lengths and all(x > yel_vert[j] for x in list_of_lengths):
+            print("error")
             print("in yellow verticals")
             print(list_of_lengths)
             print("Supposed max: ", yel_vert[j])
@@ -97,6 +100,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if bl_horiz[j] not in list_of_lengths and all(x > bl_horiz[j] for x in list_of_lengths):
+            print("error")
             print("in black horizontals")
             print(list_of_lengths)
             print("Supposed max: ", bl_horiz[j])
@@ -116,6 +120,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
         if not list_of_lengths:
             list_of_lengths.append(0)
         if yel_horiz[j] not in list_of_lengths and all(x > yel_horiz[j] for x in list_of_lengths):
+            print("error")
             print("in yellow horizontals")
             print(list_of_lengths)
             print("Supposed max: ", yel_horiz[j])
