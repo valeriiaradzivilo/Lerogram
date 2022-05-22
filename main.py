@@ -24,6 +24,7 @@ while not replay:
     yel_dots = funcs_logic.generate_yel_dots(randint(100, 200))
     # solution
     print("Answer:", yel_dots)
+    funcs_logic.print_answer(yel_dots)
     # depending on the placement of yellow dots count maximum amounts for boxes
     bl_horiz, yel_horiz = funcs_logic.find_max_hor(yel_dots)
     bl_vert, yel_vert = funcs_logic.find_max_vert(yel_dots)

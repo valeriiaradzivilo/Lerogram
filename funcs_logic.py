@@ -16,6 +16,16 @@ def generate_yel_dots(amount):
     return yel_dots
 
 
+def print_answer(yel_dots):
+    for i in range(15):
+        row = []
+        for j in range(15):
+            if (i, j) in yel_dots and j != 15:
+                row.append(j + 1)
+            if j == 15:
+                print(i, " : ", row)
+
+
 def find_max_hor(yel_dots):
     # Black verticals
     amounts_bl_vert = []
