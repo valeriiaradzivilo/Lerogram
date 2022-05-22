@@ -17,13 +17,14 @@ def generate_yel_dots(amount):
 
 
 def print_answer(yel_dots):
+    print("Answer: ")
     for i in range(15):
         row = []
         for j in range(15):
-            if (i, j) in yel_dots and j != 15:
+            if (i, j, 'y') in yel_dots and j != 15:
                 row.append(j + 1)
-            if j == 15:
-                print(i, " : ", row)
+            if j == 14:
+                print(i+1, " : ", row)
 
 
 def find_max_hor(yel_dots):
