@@ -59,12 +59,13 @@ def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
                     length = 0
         if not list_of_lengths:
             list_of_lengths.append(0)
-        if bl_vert[j] not in list_of_lengths and all(x > bl_vert[j] for x in list_of_lengths):
+        if bl_vert[j] not in list_of_lengths or all(x > bl_vert[j] for x in list_of_lengths):
             print("error")
             print("in black verticals")
             print(list_of_lengths)
             print("Supposed max: ", bl_vert[j])
             check_if_right.append(1)
+            return 1
     # Yellow verticals
     for j in range(15):
         list_of_lengths = []
@@ -78,12 +79,13 @@ def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
                     length = 0
         if not list_of_lengths:
             list_of_lengths.append(0)
-        if yel_vert[j] not in list_of_lengths and all(x > yel_vert[j] for x in list_of_lengths):
+        if yel_vert[j] not in list_of_lengths or all(x > yel_vert[j] for x in list_of_lengths):
             print("error")
             print("in yellow verticals")
             print(list_of_lengths)
             print("Supposed max: ", yel_vert[j])
             check_if_right.append(1)
+            return 1
 
 
 def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
@@ -100,7 +102,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
                     length = 0
         if not list_of_lengths:
             list_of_lengths.append(0)
-        if bl_horiz[j] not in list_of_lengths and all(x > bl_horiz[j] for x in list_of_lengths):
+        if bl_horiz[j] not in list_of_lengths or all(x > bl_horiz[j] for x in list_of_lengths):
             print("error")
             print("in black horizontals")
             print(list_of_lengths)
@@ -121,7 +123,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
                     length = 0
         if not list_of_lengths:
             list_of_lengths.append(0)
-        if yel_horiz[j] not in list_of_lengths and all(x > yel_horiz[j] for x in list_of_lengths):
+        if yel_horiz[j] not in list_of_lengths or all(x > yel_horiz[j] for x in list_of_lengths):
             print("error")
             print("in yellow horizontals")
             print(list_of_lengths)
