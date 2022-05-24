@@ -68,5 +68,15 @@ class CheckButton(Button):
         self['width'] = 10
         self['height'] = 2
         self['command'] = lambda: funcs_buttons.check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window)
-        self.place(x=310, y=530)
+        self.place(x=210, y=530)
 
+
+class AnswerButton(Button):
+    def __init__(self, yel_coord):
+        Button.__init__(self)
+        self['bg'] = 'white'
+        self['text'] = "Answer"
+        self['width'] = 10
+        self['height'] = 2
+        self['command'] = lambda: funcs_buttons.show_answer(yel_coord)
+        self.place(x=410, y=530)

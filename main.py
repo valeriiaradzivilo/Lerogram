@@ -1,7 +1,7 @@
 from random import randint
 import funcs_logic
 import funcs_interface
-from classes import WindowMaker, CheckButton
+from classes import WindowMaker, CheckButton, AnswerButton
 
 replay = []
 while not replay:
@@ -35,6 +35,8 @@ while not replay:
     # work with an array all_coords
     # button to check user input
     CheckButton(all_coords, bl_horiz, yel_horiz, bl_vert, yel_vert, main_window)
+    # button to show right answer
+    AnswerButton(yel_dots)
     # if the answer is correct right_answer window will appear
     # otherwise fail_window
     main_window.mainloop()

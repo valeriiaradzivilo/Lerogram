@@ -1,3 +1,5 @@
+from tkinter import messagebox
+
 import funcs_interface
 
 
@@ -22,7 +24,6 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
     all_coords.sort()
     print("User input:", all_coords)
     check_if_right = []
-    check_if_false = []
     # check if all boxes are colored
     check_all_colored(all_coords, check_if_right)
     check_verticals(all_coords, bl_vert, yel_vert, check_if_right)
@@ -30,7 +31,7 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
     if not check_if_right:
         funcs_interface.result_message("You Won!", window)
     else:
-        funcs_interface.result_message("You Lost!",window)
+        funcs_interface.result_message("You Lost!", window)
 
 
 def check_all_colored(all_coords, check_if_right):
@@ -105,6 +106,7 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
             print(list_of_lengths)
             print("Supposed max: ", bl_horiz[j])
             check_if_right.append(1)
+            return 1
 
     # Yellow horizontals
     for j in range(15):
@@ -125,3 +127,26 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
             print(list_of_lengths)
             print("Supposed max: ", yel_horiz[j])
             check_if_right.append(1)
+            return 1
+
+
+def show_answer(yel_dots):
+    text_answ = ""
+    text_answ += "Answer: \n"
+    text_answ += "(column: row1, row2,...)\n"
+    text_answ += "  Yellow boxes:\n"
+    for i in range(15):
+        text_answ += str(i + 1) + ": "
+        for j in range(15):
+            if (i, j, 'y') in yel_dots and j != 15:
+                text_answ += str(j + 1) + " "
+        text_answ += '\n'
+    text_answ += "    Back boxes:\n"
+    for i in range(15):
+        text_answ += str(i + 1) + ": "
+        for j in range(15):
+            if (i, j, 'y') not in yel_dots and j != 15:
+                text_answ += str(j + 1) + " "
+        text_answ += '\n'
+
+    messagebox.showinfo("Answer", text_answ)
