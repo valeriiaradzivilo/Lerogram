@@ -14,7 +14,7 @@ class WindowMaker(Tk):
     def make_the_window(self):
         # configure the root window
         self.title(self.game_title)
-        self.geometry('700x800')
+        self.geometry('700x780')
         # forbid to change window size
         self.resizable(0, 0)
         self.config(bg=self.bg_color)
@@ -33,11 +33,11 @@ class WindowMaker(Tk):
         )
 
     def make_rules(self):
-        rules = tk.Text(self, bg='white', bd=1, font=('Calibri Light', 14, 'bold'))
+        rules = tk.Text(self, bg='#eaf205', bd=1, font=('Calibri Light', 14, 'bold'), padx=10, width=60, height=9)
         rules.insert(INSERT, self.game_rules)
         rules.place(
             relx=0.01,
-            rely=0.72
+            rely=0.735
         )
 
 

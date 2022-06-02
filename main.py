@@ -5,14 +5,14 @@ from classes import WindowMaker, CheckButton, AnswerButton
 
 replay = []
 while not replay:
-    game_rules = "Rules:\nThere is a field with numbers on the left, right, top and bottom.\nYour task is to color " \
-                 "all boxes using 2 colors: black and yellow.\nNumbers on the left and top show the maximum amount of " \
-                 "black boxes that\nshould be present in a row or column. Yellow boxes - numbers on the right " \
-                 "and\nbottom.To color box black tap on the box once, to color yellow - twice. Fill all\nboxes. Press " \
+    game_rules = "Rules:\nThere is a field with numbers on the left, right, top and bottom. Your task is\nto color " \
+                 "all boxes using 2 colors: black and yellow. Numbers on the left and\ntop show the maximum amount of " \
+                 "black boxes that should be present in\na row or column. Yellow boxes - numbers on the right " \
+                 " and bottom.To color box black tap on the box once, to color yellow - twice. \nFill all boxes. Press " \
                  "the 'Check' button after you finish.\nThe game can be only closed in messagebox that appears after " \
-                 "you press 'Check'.\nGood luck ) "
+                 "you press\n'Check!'.Good luck : ) "
     game_name = "Lerogram"
-    bg_color = '#4C00C9'
+    bg_color = '#0049b8'
     main_window = WindowMaker(game_name, game_rules, bg_color, replay)
     # make label bg and rules sections
     funcs_interface.make_window_label_board(main_window)
