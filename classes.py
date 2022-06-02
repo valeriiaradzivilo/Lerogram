@@ -83,7 +83,7 @@ class SolveButton(Button):
         self['width'] = 10
         self['height'] = 2
         self['command'] = lambda: funcs_interface.create_right_button_field(all_coords, right_coords, window)
-        self.place(x=510, y=530)
+        self.place(x=410, y=530)
 
 
 class AnswerButton(Button):
@@ -94,4 +94,4 @@ class AnswerButton(Button):
         self['width'] = 10
         self['height'] = 2
         self['command'] = lambda: funcs_buttons.show_answer(yel_coord)
-        self.place(x=410, y=530)
+        self.place(x=310, y=530)

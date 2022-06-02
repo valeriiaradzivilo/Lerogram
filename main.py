@@ -33,7 +33,9 @@ while not replay:
     # create field with buttons
     funcs_interface.create_button_field(all_coords)
     # work with an array all_coords
+    # create the right answer
     right_answer = funcs_logic.right_answer(yel_dots)
+    # button to solve task
     SolveButton(all_coords, right_answer,main_window)
     # button to check user input
     CheckButton(all_coords, bl_horiz, yel_horiz, bl_vert, yel_vert, main_window)
