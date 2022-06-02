@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as tk
 import funcs_buttons
+import funcs_interface
 
 
 class WindowMaker(Tk):
@@ -56,8 +57,10 @@ class ButtonToPlay(Button):
         self['text'] = " "
         self['width'] = 2
         self['height'] = 1
-        self.bind('<Button-1>', lambda event, but=self, i=i, j=j: funcs_buttons.pressed_once(event, but, i, j, all_coords))
-        self.bind('<Double-1>', lambda event, but=self, i=i, j=j: funcs_buttons.pressed_twice(event, but, i, j, all_coords))
+        self.bind('<Button-1>',
+                  lambda event, but=self, i=i, j=j: funcs_buttons.pressed_once(event, but, i, j, all_coords))
+        self.bind('<Double-1>',
+                  lambda event, but=self, i=i, j=j: funcs_buttons.pressed_twice(event, but, i, j, all_coords))
 
 
 class CheckButton(Button):
@@ -67,8 +70,20 @@ class CheckButton(Button):
         self['text'] = "Check!"
         self['width'] = 10
         self['height'] = 2
-        self['command'] = lambda: funcs_buttons.check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window)
+        self['command'] = lambda: funcs_buttons.check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz,
+                                                               window)
         self.place(x=210, y=530)
+
+
+class SolveButton(Button):
+    def __init__(self, all_coords, right_coords,window):
+        Button.__init__(self)
+        self['bg'] = 'white'
+        self['text'] = "Solve"
+        self['width'] = 10
+        self['height'] = 2
+        self['command'] = lambda: funcs_interface.create_right_button_field(all_coords, right_coords, window)
+        self.place(x=510, y=530)
 
 
 class AnswerButton(Button):

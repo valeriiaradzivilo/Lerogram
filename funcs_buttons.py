@@ -152,3 +152,5 @@ def show_answer(yel_dots):
         text_answ += '\n'
 
     messagebox.showinfo("Answer", text_answ)
+
+

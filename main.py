@@ -1,7 +1,7 @@
 from random import randint
 import funcs_logic
 import funcs_interface
-from classes import WindowMaker, CheckButton, AnswerButton
+from classes import WindowMaker, CheckButton, AnswerButton, SolveButton
 
 replay = []
 while not replay:
@@ -33,6 +33,8 @@ while not replay:
     # create field with buttons
     funcs_interface.create_button_field(all_coords)
     # work with an array all_coords
+    right_answer = funcs_logic.right_answer(yel_dots)
+    SolveButton(all_coords, right_answer,main_window)
     # button to check user input
     CheckButton(all_coords, bl_horiz, yel_horiz, bl_vert, yel_vert, main_window)
     # button to show right answer

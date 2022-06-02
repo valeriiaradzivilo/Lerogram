@@ -50,6 +50,19 @@ def create_button_field(all_coords):
             ButtonToPlay(i, j, all_coords).place(x=165 + i * 24, y=115 + j * 25)
 
 
+# create solution
+def create_right_button_field(all_coords, right_coords, window):
+    for i in range(15):
+        for j in range(15):
+            b = ButtonToPlay(i, j, all_coords)
+            b.place(x=165 + i * 24, y=115 + j * 25)
+            if (i, j, 'b') in right_coords:
+                b.config(bg="black")
+            else:
+                b.config(bg="yellow")
+    result_message("You Won!", window)
+
+
 # messagebox that appears after user pressed on 'Check'
 def result_message(mess, window):
     msgBox = messagebox.askquestion("Result", mess + " Try again?")

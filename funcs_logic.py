@@ -1,6 +1,16 @@
 from random import randint
 
 
+def right_answer(yel_dots):
+    answer=yel_dots.copy()
+    for i in range(15):
+        for j in range(15):
+            if (i, j, 'y') not in yel_dots and j != 15:
+                answer.append((i, j, "b"))
+    answer.sort()
+    return answer
+
+
 def generate_yel_dots(amount):
     yel_dots = []
     for s in range(amount):
