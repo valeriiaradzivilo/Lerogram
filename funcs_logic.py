@@ -27,7 +27,7 @@ def generate_yel_dots(amount):
 
 
 def print_answer(yel_dots):
-    print("Answer: ")
+    print("Answer(yellow dots): ")
     for i in range(15):
         row = []
         for j in range(15):
