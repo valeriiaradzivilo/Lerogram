@@ -74,3 +74,6 @@ def result_message(mess, window):
         print("No replay")
         window.replay.append('n')
         window.destroy()
+
+
+

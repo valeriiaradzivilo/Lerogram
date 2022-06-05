@@ -153,4 +153,12 @@ def show_answer(yel_dots):
 
     messagebox.showinfo("Answer", text_answ)
 
+def exit_message(window):
+    msgBox = messagebox.askquestion("Exit", "Do you want to end game?")
+    if msgBox == 'yes':
+        print("Exit")
+        window.destroy()
+        window.replay.append('n')
 
+    else:
+        print("No exit")

@@ -1,7 +1,7 @@
 from random import randint
 import funcs_logic
 import funcs_interface
-from classes import WindowMaker, CheckButton, AnswerButton, SolveButton
+from classes import WindowMaker, CheckButton, AnswerButton, SolveButton, ExitButton
 
 replay = []
 while not replay:
@@ -43,4 +43,6 @@ while not replay:
     AnswerButton(yel_dots)
     # if the answer is correct right_answer window will appear
     # otherwise fail_window
+    # button to quit game
+    ExitButton(main_window)
     main_window.mainloop()

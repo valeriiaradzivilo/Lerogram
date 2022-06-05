@@ -95,3 +95,14 @@ class AnswerButton(Button):
         self['height'] = 2
         self['command'] = lambda: funcs_buttons.show_answer(yel_coord)
         self.place(x=310, y=530)
+
+
+class ExitButton(Button):
+    def __init__(self, window):
+        Button.__init__(self)
+        self['bg'] = 'red'
+        self['text'] = "X"
+        self['width'] = 5
+        self['height'] = 2
+        self['command'] = lambda: funcs_buttons.exit_message(window)
+        self.place(x=610, y=20)
