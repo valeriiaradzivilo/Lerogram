@@ -7,7 +7,6 @@ from classes import ColorAmounts, ButtonToPlay
 def make_window_label_board(main_window):
     main_window.make_the_window()
     main_window.make_label()
-    main_window.make_rules()
 
 
 # create 2 boxes in up-left corner and down-right

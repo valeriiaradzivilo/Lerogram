@@ -5,9 +5,8 @@ import funcs_interface
 
 
 class WindowMaker(Tk):
-    def __init__(self, game_name=" ", game_rules=" ", bg_color=" ", replay=[]):
+    def __init__(self, game_name=" ", bg_color=" ", replay=[]):
         super().__init__()
-        self.game_rules = game_rules
         self.game_title = game_name
         self.bg_color = bg_color
         self.replay = replay
@@ -15,7 +14,7 @@ class WindowMaker(Tk):
     def make_the_window(self):
         # configure the root window
         self.title(self.game_title)
-        self.geometry('700x780')
+        self.geometry('700x700')
         # forbid to change window size
         self.resizable(0, 0)
         self.config(bg=self.bg_color)
@@ -31,14 +30,6 @@ class WindowMaker(Tk):
             relx=0.5,
             rely=0.05,
             anchor='center'
-        )
-
-    def make_rules(self):
-        rules = tk.Text(self, bg='#eaf205', bd=1, font=('Calibri Light', 14, 'bold'), padx=10, width=60, height=9)
-        rules.insert(INSERT, self.game_rules)
-        rules.place(
-            relx=0.01,
-            rely=0.735
         )
 
 
@@ -76,7 +67,7 @@ class CheckButton(Button):
 
 
 class SolveButton(Button):
-    def __init__(self, all_coords, right_coords,window):
+    def __init__(self, all_coords, right_coords, window):
         Button.__init__(self)
         self['bg'] = 'white'
         self['text'] = "Solve"
@@ -106,3 +97,29 @@ class ExitButton(Button):
         self['height'] = 2
         self['command'] = lambda: funcs_buttons.exit_message(window)
         self.place(x=610, y=20)
+
+
+class RulesButton(Button):
+    def __init__(self, game_rules, bg_color):
+        self.bg_color=bg_color
+        self.game_rules = game_rules
+        Button.__init__(self)
+        self['bg'] = 'yellow'
+        self['text'] = "Rules"
+        self['width'] = 5
+        self['height'] = 2
+        self['command'] = lambda: RulesButton.make_new_window(self)
+        self.place(x=50, y=20)
+
+    def make_rules(self, new_window):
+        rules = tk.Text(new_window, bg='#eaf205', bd=1, font=('Calibri Light', 14, 'bold'), padx=10, width=60, height=9)
+        rules.insert(INSERT, self.game_rules)
+        rules.place(x=10, y=100)
+
+    def make_new_window(self):
+        new_window = WindowMaker("Rules", self.bg_color)
+        new_window.make_the_window()
+        RulesButton.make_rules(self, new_window)
+        ExitButton(new_window)
+
+

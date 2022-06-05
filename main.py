@@ -1,7 +1,7 @@
 from random import randint
 import funcs_logic
 import funcs_interface
-from classes import WindowMaker, CheckButton, AnswerButton, SolveButton, ExitButton
+from classes import WindowMaker, CheckButton, AnswerButton, SolveButton, ExitButton, RulesButton
 
 replay = []
 while not replay:
@@ -13,7 +13,7 @@ while not replay:
                  "you press\n'Check!'.Good luck : ) "
     game_name = "Lerogram"
     bg_color = '#0049b8'
-    main_window = WindowMaker(game_name, game_rules, bg_color, replay)
+    main_window = WindowMaker(game_name, bg_color, replay)
     # make label bg and rules sections
     funcs_interface.make_window_label_board(main_window)
     # make black and yellow boxes in the corners
@@ -45,4 +45,5 @@ while not replay:
     # otherwise fail_window
     # button to quit game
     ExitButton(main_window)
+    rules = RulesButton(game_rules, bg_color)
     main_window.mainloop()
