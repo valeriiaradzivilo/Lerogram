@@ -112,7 +112,7 @@ class RulesButton(Button):
         self.place(x=50, y=20)
 
     def make_rules(self, new_window):
-        rules = tk.Text(new_window, bg='#eaf205', bd=1, font=('Calibri Light', 14, 'bold'), padx=10, width=60, height=9)
+        rules = tk.Text(new_window, bg='#eaf205', bd=1, font=('Calibri Light', 14, 'bold'), padx=10,pady=10, width=60, height=20)
         rules.insert(INSERT, self.game_rules)
         rules.place(x=10, y=100)
 
@@ -120,6 +120,5 @@ class RulesButton(Button):
         new_window = WindowMaker("Rules", self.bg_color)
         new_window.make_the_window()
         RulesButton.make_rules(self, new_window)
-        ExitButton(new_window)
 
 

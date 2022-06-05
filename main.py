@@ -5,12 +5,12 @@ from classes import WindowMaker, CheckButton, AnswerButton, SolveButton, ExitBut
 
 replay = []
 while not replay:
-    game_rules = "Rules:\nThere is a field with numbers on the left, right, top and bottom. Your task is\nto color " \
-                 "all boxes using 2 colors: black and yellow. Numbers on the left and\ntop show the maximum amount of " \
-                 "black boxes that should be present in\na row or column. Yellow boxes - numbers on the right " \
-                 " and bottom.To color box black tap on the box once, to color yellow - twice. \nFill all boxes. Press " \
+    game_rules = "Rules:\n\nThere is a field with numbers on the left, right, top and bottom. \nYour task is to color " \
+                 "all boxes using 2 colors: black and yellow.\nNumbers on the left and top show the maximum length of " \
+                 "black boxes\nback-to-back that should be present in a row or column.\nYellow boxes - numbers on the right " \
+                 " and bottom.\nTo color box in black tap on the box once, to color yellow - twice. \nFill all boxes. Press " \
                  "the 'Check' button after you finish.\nThe game can be only closed in messagebox that appears after " \
-                 "you press\n'Check!'.Good luck : ) "
+                 "you press\n'Check!' or using button 'X' right next to the game's title.\nIf you press ordinary window exit button - the game will restart!\nGood luck : ) \n\n     About:\nMade by Radzivilo Valeriia IP-14 2022 "
     game_name = "Lerogram"
     bg_color = '#0049b8'
     main_window = WindowMaker(game_name, bg_color, replay)
@@ -45,5 +45,5 @@ while not replay:
     # otherwise fail_window
     # button to quit game
     ExitButton(main_window)
-    rules = RulesButton(game_rules, bg_color)
+    RulesButton(game_rules, bg_color)
     main_window.mainloop()
