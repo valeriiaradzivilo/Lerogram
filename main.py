@@ -1,7 +1,12 @@
 from random import randint
 import funcs_logic
 import funcs_interface
-from classes import WindowMaker, CheckButton, AnswerButton, SolveButton, ExitButton, RulesButton
+from WindowMaker import WindowMaker
+from AnswerButton import AnswerButton
+from ExitButton import ExitButton
+from SolveButton import SolveButton
+from CheckButton import CheckButton
+from RulesButton import RulesButton
 
 replay = []
 while not replay:

@@ -3,18 +3,7 @@ from tkinter import messagebox
 import funcs_interface
 
 
-def pressed_once(event, but, i, j, all_coords):
-    but["bg"] = "black"
-    all_coords.append((i, j, "b"))
-    while (i, j, "y") in all_coords:
-        all_coords.remove((i, j, "y"))
 
-
-def pressed_twice(event, but, i, j, all_coords):
-    but["bg"] = "yellow"
-    all_coords.append((i, j, "y"))
-    while (i, j, "b") in all_coords:
-        all_coords.remove((i, j, "b"))
 
 
 def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
@@ -132,34 +121,5 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
             return 1
 
 
-def show_answer(yel_dots):
-    text_answ = ""
-    text_answ += "Answer: \n"
-    text_answ += "(column: row1, row2,...)\n"
-    text_answ += "  Yellow boxes:\n"
-    for i in range(15):
-        text_answ += str(i + 1) + ": "
-        for j in range(15):
-            if (i, j, 'y') in yel_dots and j != 15:
-                text_answ += str(j + 1) + " "
-        text_answ += '\n'
-    text_answ += "    Back boxes:\n"
-    for i in range(15):
-        text_answ += str(i + 1) + ": "
-        for j in range(15):
-            if (i, j, 'y') not in yel_dots and j != 15:
-                text_answ += str(j + 1) + " "
-        text_answ += '\n'
-
-    messagebox.showinfo("Answer", text_answ)
 
 
-def exit_message(window):
-    msgBox = messagebox.askquestion("Exit", "Do you want to end game?")
-    if msgBox == 'yes':
-        print("Exit")
-        window.destroy()
-        window.replay.append('n')
-
-    else:
-        print("No exit")
