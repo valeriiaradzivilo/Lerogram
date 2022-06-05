@@ -66,11 +66,11 @@ def create_right_button_field(all_coords, right_coords, window):
 def result_message(mess, window):
     msgBox = messagebox.askquestion("Result", mess + " Try again?")
     if msgBox == 'yes':
-        # print("Replaying the game")
+        print("Replaying the game")
         window.destroy()
 
     else:
-        # print("No replay")
+        print("No replay")
         window.replay.append('n')
         window.destroy()
 
