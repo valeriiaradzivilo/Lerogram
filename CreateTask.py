@@ -27,7 +27,7 @@ class CreateTask(Button):
         funcs_interface.make_two_color_boxes()
         funcs_interface.create_button_field(self.all_coord)
         new_window.make_label()
-        self.create.append('y')
+        self.create.append(1)
         DoneTask(new_window, self.main_window, self.all_coord, self.create)
 
 
