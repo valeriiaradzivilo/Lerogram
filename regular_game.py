@@ -15,15 +15,18 @@ from CreateTask import CreateTask
 def regular_game(create, replay, all_coords):
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
-                 "of black cells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
-                 "indicate which the longest block of yellow cells is present in a given column or row.\nThere may be " \
+                 "of black\ncells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
+                 "indicate which the longest\nblock of yellow cells is present in a given column or row.\nThere may be " \
                  "several such blocks, but the length of none of them should not exceed the maximum value.\nThere " \
                  "must also be a block equal in length to this value.\n\nIf the player does not exceed the maximum " \
                  "length in all blocks – he wins,\nif not – loses. To check the correctness of the input,you need to " \
-                 "click Check.\nAnd to get a hint – Answer.\nIf the task is too difficult, the computer can solve it " \
-                 "for you.\nTo do this, simply press the Solve button.\nTo close the game, you need to click on the " \
+                 "click 'Check'.\nAnd to get a hint – 'Answer'.\nIf the task is too difficult, the computer can solve " \
+                 "it " \
+                 "for you.\nTo do this, simply press the 'Solve' button.\nTo close the game, you need to click on the " \
                  "red button with a cross\nnext to the title.If you try to exit the game in the usual way -\nthe game " \
-                 "will reboot.\nGood luck : ) \n\n     About:\nMade by Radzivilo Valeriia IP-14 2022 "
+                 "will reboot." \
+                 "\nIf you want to create your own task - click 'Create Task'.\nGood luck : ) \n\n" \
+                 "About:\nMade by Radzivilo Valeriia IP-14 2022 "
     game_name = "Lerogram"
     bg_color = '#0049b8'
     main_window = WindowMaker(game_name, bg_color, replay)
