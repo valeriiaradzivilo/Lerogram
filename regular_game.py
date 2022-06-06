@@ -12,7 +12,7 @@ from RulesButton import RulesButton
 from CreateTask import CreateTask
 
 
-def regular_game(create=[], replay=[]):
+def regular_game(create, replay, all_coords):
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
                  "of black cells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
@@ -27,8 +27,6 @@ def regular_game(create=[], replay=[]):
     game_name = "Lerogram"
     bg_color = '#0049b8'
     main_window = WindowMaker(game_name, bg_color, replay)
-    # create an array for all pressed buttons and their color
-    all_coords = []
     # button to quit game
     ExitButton(main_window)
     # button to open the rules
@@ -37,14 +35,17 @@ def regular_game(create=[], replay=[]):
     funcs_interface.make_window_label_board(main_window)
     # make black and yellow boxes in the corners
     funcs_interface.make_two_color_boxes()
-
-    # generate yellow dots in amount of random range
-    if not create:
-        # button for user to create personal task
-        CreateTask(main_window, bg_color, all_coords, create)
+    # button for user to create personal task
+    CreateTask(main_window, bg_color, all_coords, create, main_window)
+    # if user did not choose CreateTask - the task will be random
+    if not create or create.pop() != 1:
+        print("Random:")
+        # generate yellow dots in amount of random range
         yel_dots = funcs_logic.generate_yel_dots(randint(100, 200))
     else:
+        print("Created:")
         yel_dots = funcs_logic.take_yels(all_coords)
+        print(yel_dots)
     # solution
     funcs_logic.print_answer(yel_dots)
     # depending on the placement of yellow dots count maximum amounts for boxes
@@ -54,6 +55,7 @@ def regular_game(create=[], replay=[]):
     funcs_interface.make_num_horiz_board(bl_horiz, yel_horiz)
     funcs_interface.make_num_vert_board(bl_vert, yel_vert)
     # create field with buttons
+    all_coords.clear()
     funcs_interface.create_button_field(all_coords)
     # work with an array all_coords
     # create the right answer

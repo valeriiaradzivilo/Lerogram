@@ -3,9 +3,6 @@ from tkinter import messagebox
 import funcs_interface
 
 
-
-
-
 def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
     # delete duplicates
     all_coords = list(set(all_coords))
@@ -119,7 +116,3 @@ def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
             print("Supposed max: ", yel_horiz[j])
             check_if_right.append(1)
             return 1
-
-
-
-

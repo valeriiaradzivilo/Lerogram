@@ -104,9 +104,12 @@ def find_max_vert(yel_dots):
 
 
 def take_yels(all_coords):
+    all_coords.sort()
     yel_dots = []
-    for i in range(15):
-        for j in range(15):
+    for i in range(16):
+        for j in range(16):
             if (i, j, 'y') in all_coords:
+                yel_dots.append((i, j, 'y'))
+            if j == 15 or i == 15:
                 yel_dots.append((i, j, 'y'))
     return yel_dots
