@@ -1,15 +1,13 @@
 from tkinter import Button, messagebox
+from CheckButton import CheckButton
 
 
-class AnswerButton(Button):
+class AnswerButton(CheckButton):
     def __init__(self, yel_coord):
         self.yel_coord = yel_coord
-        Button.__init__(self)
-        self['bg'] = 'white'
+        super().__init__()
         self['text'] = "Answer"
-        self['width'] = 10
-        self['height'] = 2
-        self['command'] = lambda : AnswerButton.show_answer(self)
+        self['command'] = lambda: AnswerButton.show_answer(self)
         self.place(x=310, y=530)
 
     def show_answer(self):

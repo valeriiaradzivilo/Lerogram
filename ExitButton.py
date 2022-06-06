@@ -13,7 +13,7 @@ class ExitButton(Button):
         self.place(x=610, y=20)
 
     def exit_message(self):
-        msgBox = messagebox.askquestion("Exit", "Do you want to end game?")
+        msgBox = messagebox.askquestion("Exit", "Do you want to exit the game?")
         if msgBox == 'yes':
             print("Exit")
             self.window.destroy()
