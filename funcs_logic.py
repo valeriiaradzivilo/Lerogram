@@ -2,7 +2,7 @@ from random import randint
 
 
 def right_answer(yel_dots):
-    answer=yel_dots.copy()
+    answer = yel_dots.copy()
     for i in range(15):
         for j in range(15):
             if (i, j, 'y') not in yel_dots and j != 15:
@@ -34,7 +34,7 @@ def print_answer(yel_dots):
             if (i, j, 'y') in yel_dots and j != 15:
                 row.append(j + 1)
             if j == 14:
-                print(i+1, " : ", row)
+                print(i + 1, " : ", row)
 
 
 def find_max_hor(yel_dots):
@@ -101,3 +101,12 @@ def find_max_vert(yel_dots):
         amounts_yel_horiz.append(result_yel)
 
     return amounts_bl_horiz, amounts_yel_horiz
+
+
+def take_yels(all_coords):
+    yel_dots = []
+    for i in range(15):
+        for j in range(15):
+            if (i, j, 'y') in all_coords:
+                yel_dots.append((i, j, 'y'))
+    return yel_dots
