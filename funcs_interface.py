@@ -1,6 +1,7 @@
 from tkinter import Label, messagebox
 from ColorAmounts import ColorAmounts
 from ButtonToPlay import ButtonToPlay
+from CreateTask import CreateTask
 
 
 # create the main window
@@ -64,10 +65,9 @@ def result_message(mess, window):
 
 
 def wrong_create_message(mess, window):
-    msgBox = messagebox.askquestion("Result", mess + " Try again?")
+    msgBox = messagebox.askquestion("Result", mess + " Do you want to retry?", icon='error')
     if msgBox == 'yes':
-        print("Turning back to main window")
-        window.destroy()
+        print("Trying again")
 
     else:
         print("Turning back to main window")

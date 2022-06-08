@@ -1,8 +1,8 @@
-import tkinter
 from random import randint
 
 import funcs_logic
 import funcs_interface
+
 from WindowMaker import WindowMaker
 from AnswerButton import AnswerButton
 from ExitButton import ExitButton
@@ -15,7 +15,6 @@ from CreateTask import CreateTask
 def regular_game(create, replay, all_coords):
     if not replay:
         replay.append('y')
-    print(replay)
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
                  "of black\ncells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
@@ -28,7 +27,8 @@ def regular_game(create, replay, all_coords):
                  "for you.\nTo do this, simply press the 'Solve' button.\nTo close the game, you need to click on the " \
                  "red button with a cross\nnext to the title.If you try to exit the game in the usual way -\nthe game " \
                  "will reboot." \
-                 "\nIf you want to create your own task - click 'Create Task'.\nGood luck : ) \n\n" \
+                 "\nIf you want to create your own task - click 'Create Task'.\nMake sure to completely fill the " \
+                 "field.\nGood luck : ) \n" \
                  "About:\nMade by Radzivilo Valeriia IP-14 2022 "
     game_name = "Lerogram"
     bg_color = '#0049b8'

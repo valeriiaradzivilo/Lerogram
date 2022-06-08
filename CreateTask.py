@@ -56,4 +56,3 @@ class DoneTask(Button):
 
         else:
             funcs_interface.wrong_create_message("You did not fill the field.", self.old_window)
-            regular_game.regular_game(create=[0], all_coords=[], replay=self.main_window.replay)
