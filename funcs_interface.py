@@ -54,9 +54,21 @@ def result_message(mess, window):
     msgBox = messagebox.askquestion("Result", mess + " Try again?")
     if msgBox == 'yes':
         print("Replaying the game")
+        window.replay.append('y')
         window.destroy()
 
     else:
         print("No replay")
         window.replay.append('n')
+        window.destroy()
+
+
+def wrong_create_message(mess, window):
+    msgBox = messagebox.askquestion("Result", mess + " Try again?")
+    if msgBox == 'yes':
+        print("Turning back to main window")
+        window.destroy()
+
+    else:
+        print("Turning back to main window")
         window.destroy()

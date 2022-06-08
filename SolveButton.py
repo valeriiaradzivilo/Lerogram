@@ -1,4 +1,3 @@
-from tkinter import Button
 from ButtonToPlay import ButtonToPlay
 import funcs_interface
 from CheckButton import CheckButton

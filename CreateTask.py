@@ -46,15 +46,19 @@ class DoneTask(Button):
         self.place(x=310, y=600)
 
     def make_new_task(self):
-        replay = []
+        replay = ['y']
         # delete duplicates
         self.all_coord = list(set(self.all_coord))
         self.all_coord.sort()
         if len(self.all_coord) == 15 * 15:
             self.create.append(1)
             self.old_window.destroy()
+            if not replay:
+                print("no replay")
             regular_game.regular_game(self.create, replay, self.all_coord)
+
         else:
-            funcs_interface.result_message("You did not fill the field.", self.old_window)
-            self.all_coord.clear()
-            regular_game.regular_game(self.create.append(0), self.all_coord)
+            if not replay:
+                print("no replay")
+            funcs_interface.wrong_create_message("You did not fill the field.", self.old_window)
+            regular_game.regular_game(create=[0], all_coords=[], replay=replay)

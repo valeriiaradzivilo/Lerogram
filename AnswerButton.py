@@ -1,4 +1,4 @@
-from tkinter import Button, messagebox
+from tkinter import messagebox
 from CheckButton import CheckButton
 
 

@@ -13,6 +13,8 @@ from CreateTask import CreateTask
 
 
 def regular_game(create, replay, all_coords):
+    if not replay:
+        replay.append('y')
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
                  "of black\ncells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
@@ -46,9 +48,14 @@ def regular_game(create, replay, all_coords):
         # generate yellow dots in amount of random range
         yel_dots = funcs_logic.generate_yel_dots(randint(100, 200))
     else:
-        print("Created:")
-        yel_dots = funcs_logic.take_yels(all_coords)
-        print(yel_dots)
+        if len(all_coords) == 225:
+            print("Created:")
+            yel_dots = funcs_logic.take_yels(all_coords)
+            print(yel_dots)
+        else:
+            print("Random:")
+            # generate yellow dots in amount of random range
+            yel_dots = funcs_logic.generate_yel_dots(randint(100, 200))
     # solution
     funcs_logic.print_answer(yel_dots)
     # depending on the placement of yellow dots count maximum amounts for boxes
