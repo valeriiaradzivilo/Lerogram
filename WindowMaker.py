@@ -3,7 +3,7 @@ import tkinter as tk
 
 
 class WindowMaker(Tk):
-    def __init__(self, game_name=" ", bg_color=" ", replay=['y']):
+    def __init__(self, game_name=" ", bg_color=" ", replay=[]):
         super().__init__()
         self.game_title = game_name
         self.bg_color = bg_color

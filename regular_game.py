@@ -15,6 +15,7 @@ from CreateTask import CreateTask
 def regular_game(create, replay, all_coords):
     if not replay:
         replay.append('y')
+    print(replay)
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
                  "of black\ncells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
