@@ -1,8 +1,7 @@
-from tkinter import messagebox
-
 import funcs_interface
 
 
+# method to check user input
 def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
     # delete duplicates
     all_coords = list(set(all_coords))
@@ -20,6 +19,7 @@ def check_us_input(all_coords, bl_vert, yel_vert, bl_horiz, yel_horiz, window):
         funcs_interface.result_message("You Lost!", window)
 
 
+# method check if all boxes are coloured
 def check_all_colored(all_coords, check_if_right):
     user_coord_amount = len(all_coords)
     needed_coord_amount = 15 * 15
@@ -31,6 +31,7 @@ def check_all_colored(all_coords, check_if_right):
         check_if_right.append(1)
 
 
+# method to check if all vertical lines are correctly filled
 def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
     # Black verticals
     for j in range(15):
@@ -74,6 +75,7 @@ def check_verticals(all_coords, bl_vert, yel_vert, check_if_right):
             return 1
 
 
+# method to check if all horizontal lines are correctly filled
 def check_horizontals(all_coords, bl_horiz, yel_horiz, check_if_right):
     # Blacks horizontals
     for j in range(15):

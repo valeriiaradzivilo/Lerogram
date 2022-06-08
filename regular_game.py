@@ -30,8 +30,9 @@ def regular_game(create, replay, all_coords):
                  "\nIf you want to create your own task - click 'Create Task'.\nMake sure to completely fill the " \
                  "field.\nGood luck : ) \n" \
                  "About:\nMade by Radzivilo Valeriia IP-14 2022 "
-    game_name = "Lerogram"
-    bg_color = '#0049b8'
+    game_name = "Lerogram"  # title
+    bg_color = '#0049b8'  # game's background color
+    # create main window with the game
     main_window = WindowMaker(game_name, bg_color, replay)
     # button to quit game
     ExitButton(main_window)
@@ -57,7 +58,7 @@ def regular_game(create, replay, all_coords):
             print("Random:")
             # generate yellow dots in amount of random range
             yel_dots = funcs_logic.generate_yel_dots(randint(100, 200))
-    # solution
+    # solution to any task
     funcs_logic.print_answer(yel_dots)
     # depending on the placement of yellow dots count maximum amounts for boxes
     bl_horiz, yel_horiz = funcs_logic.find_max_hor(yel_dots)
@@ -79,5 +80,4 @@ def regular_game(create, replay, all_coords):
     AnswerButton(yel_dots)
     # if the answer is correct right_answer window will appear
     # otherwise fail_window
-
     main_window.mainloop()

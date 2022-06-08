@@ -1,21 +1,12 @@
 from random import randint
 
 
-def right_answer(yel_dots):
-    answer = yel_dots.copy()
-    for i in range(15):
-        for j in range(15):
-            if (i, j, 'y') not in yel_dots and j != 15:
-                answer.append((i, j, "b"))
-    answer.sort()
-    return answer
-
-
+# generate random task
 def generate_yel_dots(amount):
     yel_dots = []
     for s in range(amount):
-        i = randint(0, 14)
-        j = randint(0, 14)
+        i = randint(0, 15)
+        j = randint(0, 15)
         yel_dots.append((i, j, 'y'))
 
     for i in range(15):
@@ -26,6 +17,18 @@ def generate_yel_dots(amount):
     return yel_dots
 
 
+# create full right answer from random yellow dots
+def right_answer(yel_dots):
+    answer = yel_dots.copy()
+    for i in range(15):
+        for j in range(15):
+            if (i, j, 'y') not in yel_dots and j != 15:
+                answer.append((i, j, "b"))
+    answer.sort()
+    return answer
+
+
+# print answer in console
 def print_answer(yel_dots):
     print("Answer(yellow dots): ")
     for i in range(15):
@@ -37,6 +40,7 @@ def print_answer(yel_dots):
                 print(i + 1, " : ", row)
 
 
+# count maximum amounts in horizontal lines
 def find_max_hor(yel_dots):
     # Black verticals
     amounts_bl_vert = []
@@ -70,6 +74,7 @@ def find_max_hor(yel_dots):
     return amounts_bl_vert, amounts_yel_ver
 
 
+# count maximum amounts in vertical lines
 def find_max_vert(yel_dots):
     # Black horizontals
     amounts_bl_horiz = []
@@ -103,6 +108,7 @@ def find_max_vert(yel_dots):
     return amounts_bl_horiz, amounts_yel_horiz
 
 
+# take only yellow coordinates from user's input
 def take_yels(all_coords):
     all_coords.sort()
     yel_dots = []

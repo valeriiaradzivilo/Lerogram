@@ -9,6 +9,7 @@ class WindowMaker(Tk):
         self.bg_color = bg_color
         self.replay = replay
 
+    # method to create the window
     def make_the_window(self):
         # configure the root window
         self.title(self.game_title)
@@ -17,6 +18,7 @@ class WindowMaker(Tk):
         self.resizable(0, 0)
         self.config(bg=self.bg_color)
 
+    # method to create title
     def make_label(self):
         # text "Lerogram" on top of the game
         tk.Label(

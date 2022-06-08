@@ -64,10 +64,12 @@ def result_message(mess, window):
         window.destroy()
 
 
+# message after 'Done' button is pressed
 def wrong_create_message(mess, window):
     msgBox = messagebox.askquestion("Result", mess + " Do you want to retry?", icon='error')
     if msgBox == 'yes':
         print("Trying again")
+        # give person a chance to change the input
 
     else:
         print("Turning back to main window")
