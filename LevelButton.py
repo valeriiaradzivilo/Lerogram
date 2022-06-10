@@ -1,6 +1,8 @@
-from CheckButton import CheckButton
-import funcs_logic, regular_game
 import tkinter as tk
+
+import funcs_logic
+import regular_game
+from CheckButton import CheckButton
 
 
 class LevelButton(CheckButton):

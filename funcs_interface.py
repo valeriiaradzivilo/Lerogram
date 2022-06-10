@@ -56,6 +56,7 @@ def result_message(mess, window):
     if msgBox == 'yes':
         print("Replaying the game")
         window.replay.append('y')
+        window.replay.append('y')
         window.destroy()
 
     else:
@@ -65,7 +66,7 @@ def result_message(mess, window):
 
 
 # message after 'Done' button is pressed
-def wrong_create_message(mess, window):
+def wrong_create_message(self,mess):
     msgBox = messagebox.askquestion("Result", mess + " Do you want to retry?", icon='error')
     if msgBox == 'yes':
         print("Trying again")
@@ -73,4 +74,5 @@ def wrong_create_message(mess, window):
 
     else:
         print("Turning back to main window")
-        window.destroy()
+        self.old_window.destroy()
+        self.main_window.replay.append('y')
