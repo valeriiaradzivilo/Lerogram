@@ -15,12 +15,15 @@ class SolveButton(CheckButton):
 
     # create solution
     def create_right_button_field(self):
+        self.all_coords.clear()
         for i in range(15):
             for j in range(15):
                 b = ButtonToPlay(i, j, self.all_coords)
                 b.place(x=165 + i * 24, y=115 + j * 25)
                 if (i, j, 'b') in self.right_coords:
                     b.config(bg="black")
+                    self.all_coords.append((i, j, 'b'))
                 else:
                     b.config(bg="yellow")
-        funcs_interface.result_message("You Won!", self.window)
+                    self.all_coords.append((i, j, 'y'))
+        # funcs_interface.result_message("You Won!", self.window)
