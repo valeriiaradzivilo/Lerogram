@@ -60,7 +60,7 @@ class DoneTask(Button):
         if len(self.all_coord) == 15 * 15:
             self.create.append(1)
             self.old_window.destroy()
-            regular_game.regular_game(self.create, self.main_window.replay, self.all_coord)
+            regular_game.regular_game(self.create, self.main_window.replay, self.all_coord, amounts=[])
         # else show the error message
         else:
             funcs_interface.wrong_create_message(self, "You did not fill the field.")

@@ -1,7 +1,7 @@
 from tkinter import Label, messagebox
 from ColorAmounts import ColorAmounts
 from ButtonToPlay import ButtonToPlay
-from CreateTask import CreateTask
+import regular_game
 
 
 # create the main window
@@ -55,7 +55,7 @@ def result_message(mess, window):
     msgBox = messagebox.askquestion("Result", mess + " Try again?")
     if msgBox == 'yes':
         print("Replaying the game")
-        window.replay.append('y')
+        window.replay.clear()
         window.replay.append('y')
         window.destroy()
 
@@ -76,3 +76,4 @@ def wrong_create_message(self,mess):
         print("Turning back to main window")
         self.old_window.destroy()
         self.main_window.replay.append('y')
+        regular_game.regular_game(self.create, self.main_window.replay, self.all_coord, amounts=[])

@@ -3,7 +3,7 @@ import funcs_buttons
 
 
 class CheckButton(Button):
-    def __init__(self, all_coords = [], bl_vert = [], yel_vert = [], bl_horiz = [], yel_horiz = [], window = None):
+    def __init__(self, all_coords=[], bl_vert=[], yel_vert=[], bl_horiz=[], yel_horiz=[], window=None):
         Button.__init__(self)
         self['bg'] = 'white'
         self['text'] = "Check!"
