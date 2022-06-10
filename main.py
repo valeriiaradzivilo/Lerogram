@@ -5,6 +5,8 @@ replay = ['y']
 create = []
 # create an array for all presssed buttons and their color
 all_coords = []
+# level
+amounts = []
 # while user wants to replay
 while replay and replay.pop() == 'y':
-    regular_game.regular_game(create, replay, all_coords)
+    regular_game.regular_game(create, replay, all_coords, amounts)
