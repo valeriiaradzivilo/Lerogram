@@ -3,7 +3,7 @@ import funcs_buttons
 
 
 class ButtonToPlay(Button):
-    def __init__(self, i, j, all_coords):
+    def __init__(self, i = 0, j = 0, all_coords = []):
         Button.__init__(self)
         self['bg'] = 'white'
         self['text'] = " "

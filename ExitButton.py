@@ -2,7 +2,7 @@ from tkinter import Button, messagebox
 
 
 class ExitButton(Button):
-    def __init__(self, window):
+    def __init__(self, window=None):
         self.window = window
         Button.__init__(self)
         self['bg'] = 'red'

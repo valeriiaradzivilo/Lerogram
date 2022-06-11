@@ -9,7 +9,9 @@ all_coords = []
 # level
 amounts = []
 # while user wants to replay
-while replay and replay.pop() == 'y':
+re = 0
+while True:
     regular_game.regular_game(create, replay, all_coords, amounts)
-    if not replay or replay.pop() != 'n':
-        replay.append('y')
+    if replay and replay.pop() == 'n':
+        break
+    print("Replay in main: ", replay)

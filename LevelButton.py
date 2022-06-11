@@ -6,7 +6,7 @@ from CheckButton import CheckButton
 
 
 class LevelButton(CheckButton):
-    def __init__(self, level_name, amount_dots, amounts, plus_pos, window):
+    def __init__(self, level_name=None, amount_dots=0, amounts=[], plus_pos=0, window=None):
         self.level_name = level_name
         self.plus_pos = plus_pos
         self.amount_dots = amount_dots
@@ -23,7 +23,7 @@ class LevelButton(CheckButton):
         self.amounts.append(self.amount_dots)
         self.window.destroy()
         print("Level: ", self.level_name)
-        regular_game.regular_game(create=[], replay=['y'], all_coords=[], amounts=self.amounts)
+        regular_game.regular_game(create=[], replay=['n'], all_coords=[], amounts=self.amounts)
 
     def create_level_title(self):
         # text "Level" on right of the game

@@ -5,7 +5,7 @@ import regular_game
 
 
 class CreateTask(Button):
-    def __init__(self, old_window, bg_color, all_coord, create, main_window):
+    def __init__(self, old_window=None, bg_color=None, all_coord=[], create=[], main_window=None):
         self.old_window = old_window
         self.bg_color = bg_color
         self.all_coord = all_coord

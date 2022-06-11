@@ -3,7 +3,7 @@ from CheckButton import CheckButton
 
 
 class AnswerButton(CheckButton):
-    def __init__(self, yel_coord):
+    def __init__(self, yel_coord = []):
         self.yel_coord = yel_coord
         super().__init__()
         self['text'] = "Answer"

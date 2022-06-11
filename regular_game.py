@@ -13,7 +13,7 @@ from CreateTask import CreateTask
 from LevelButton import LevelButton
 
 
-def regular_game(create, replay, all_coords, amounts):
+def regular_game(create=[], replay=[], all_coords=[], amounts=[]):
     game_rules = "Rules:\n\nLerogram is a logic game on a field of 15x15 cells for one player.\nThere are numbers on " \
                  "the left, right, bottom, and top.\nThe numbers on the left and top indicate which the longest block " \
                  "of black\ncells is present in this row or column.\nSimilarly, the numbers on the right and bottom " \
@@ -86,6 +86,11 @@ def regular_game(create, replay, all_coords, amounts):
     CheckButton(all_coords, bl_horiz, yel_horiz, bl_vert, yel_vert, main_window)
     # button to show right answer
     AnswerButton(yel_dots)
+    if replay and replay.pop() == 'n':
+        main_window.destroy()
     # if the answer is correct right_answer window will appear
     # otherwise fail_window
+
     main_window.mainloop()
+
+

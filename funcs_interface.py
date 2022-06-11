@@ -1,4 +1,5 @@
 from tkinter import Label, messagebox
+
 from ColorAmounts import ColorAmounts
 from ButtonToPlay import ButtonToPlay
 import regular_game
@@ -62,17 +63,20 @@ def result_message(mess, window):
 
     else:
         print("No replay")
+        window.replay.clear()
         window.replay.append('n')
         window.destroy()
 
 
+
 # message after 'Done' button is pressed
-def wrong_create_message(self,mess):
+def wrong_create_message(self, mess):
     msgBox = messagebox.askquestion("Result", mess + " Do you want to retry?", icon='error')
     if msgBox == 'yes':
         print("Trying again")
         self.all_coord.clear()
-        b = CreateTask(self.old_window, bg_color=self.main_window.bg_color, all_coord=[], create=[], main_window=self.main_window)
+        b = CreateTask(self.old_window, bg_color=self.main_window.bg_color, all_coord=[], create=[],
+                       main_window=self.main_window)
         b.create_field()
         # give person a chance to change the input
 
