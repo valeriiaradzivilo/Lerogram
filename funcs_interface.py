@@ -2,6 +2,7 @@ from tkinter import Label, messagebox
 from ColorAmounts import ColorAmounts
 from ButtonToPlay import ButtonToPlay
 import regular_game
+from CreateTask import CreateTask
 
 
 # create the main window
@@ -70,6 +71,9 @@ def wrong_create_message(self,mess):
     msgBox = messagebox.askquestion("Result", mess + " Do you want to retry?", icon='error')
     if msgBox == 'yes':
         print("Trying again")
+        self.all_coord.clear()
+        b = CreateTask(self.old_window, bg_color=self.main_window.bg_color, all_coord=[], create=[], main_window=self.main_window)
+        b.create_field()
         # give person a chance to change the input
 
     else:

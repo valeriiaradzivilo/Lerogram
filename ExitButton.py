@@ -20,6 +20,7 @@ class ExitButton(Button):
             print("Exit")
             self.window.destroy()
             self.window.replay.append('n')
+            self.window.replay.append('n')
 
         else:
             # close message

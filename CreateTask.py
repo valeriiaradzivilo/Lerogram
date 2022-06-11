@@ -53,9 +53,11 @@ class DoneTask(Button):
 
     # check and create personal task
     def make_new_task(self):
+
         # delete duplicates
         self.all_coord = list(set(self.all_coord))
         self.all_coord.sort()
+        print("Input coords: ", self.all_coord)
         # if the user colours all buttons - create new game from input
         if len(self.all_coord) == 15 * 15:
             self.create.append(1)
