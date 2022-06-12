@@ -26,4 +26,4 @@ class SolveButton(CheckButton):
                 else:
                     b.config(bg="yellow")
                     self.all_coords.append((i, j, 'y'))
-        # funcs_interface.result_message("You Won!", self.window)
+
